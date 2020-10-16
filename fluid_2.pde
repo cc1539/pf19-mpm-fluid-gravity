@@ -109,6 +109,17 @@ void draw() {
     handleInput();
   }
   
+  if(mousePressed && mouseButton==CENTER) {
+    float dx = mouseX-pmouseX;
+    float dy = mouseY-pmouseY;
+    for(Part part : parts) {
+      part.x[0] += dx;
+      part.y[0] += dy;
+      part.x[1] += dx;
+      part.y[1] += dy;
+    }
+  }
+  
   background(0);
   
   bh.run();
